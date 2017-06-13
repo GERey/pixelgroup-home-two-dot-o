@@ -1,0 +1,8 @@
+uwsgi:
+  image: "gerey/pixelgroup-home-two-dot-o-uwsgi:latest"
+nginx:
+  image: "gerey/pixelgroup-home-two-dot-o-nginx:latest"
+  links:
+    - uwsgi
+  expose:
+    - 8000
