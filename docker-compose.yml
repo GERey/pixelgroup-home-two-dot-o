@@ -1,0 +1,8 @@
+uwsgi:
+  image: "gerey/pixelgroup-home-two-dot-o-uwsgi:${CIRCLE_SHA1}"
+nginx:
+  image: "gerey/pixelgroup-home-two-dot-o-nginx:${CIRCLE_SHA1}"
+  links:
+    - uwsgi
+  expose:
+    - 8000
